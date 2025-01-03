@@ -1,5 +1,4 @@
 <?php
-
 try {
 	$conn = connectDatabase();
 	if (!$conn) {
