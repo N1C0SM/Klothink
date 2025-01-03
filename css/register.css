@@ -1,0 +1,130 @@
+main > section.register{
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+	text-align: center;
+	align-items: center;
+
+
+	div.main{
+		display: flex;
+		flex-direction: column;
+		gap: 10em;
+		section.header{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		img{
+			width: 64px;
+			margin: auto;
+		}
+		.separator {
+			display: flex;
+			align-items: center;
+			margin: 20px 0;
+			position: relative;
+
+			&::before,
+			&::after {
+				content: '';
+				flex: 1;
+				border-bottom: 1px solid #ccc;
+				margin: 0 10px;
+			}
+
+			span {
+				color: #666;
+				font-size: 14px;
+			}
+		}
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			padding: 12px;
+			background-color: #ffcc00;
+			color: white;
+			border: none;
+			border-radius: 40px;
+			cursor: pointer;
+			font-size: 1rem;
+
+			&:hover {
+				background-color: #e6b800;
+			}
+		}
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+			color: #666;
+		}
+
+		input {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			width: 400px;
+			padding: 20px;
+		}
+
+		div.password-container {
+			display: flex;
+			align-items: center;
+			justify-content: right;
+
+			input {
+				position: absolute;
+				cursor: pointer;
+			}
+
+			span{
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 20px;
+
+				img{
+					width: 20px;
+				}
+			}
+		}
+
+		button {
+			width: 100%;
+			padding: 10px;
+			background-color: #ffcc00;
+			color: white;
+			border: none;
+			border-radius: 40px;
+			cursor: pointer;
+			font-size: 1rem;
+
+			&:hover {
+				background-color: #e6b800;
+			}
+		}
+	}
+
+	div.footer{
+		color: #666;
+		display: flex;
+		justify-content: center;
+		gap: 2px;
+		font-size: 16px;
+
+		a{
+			text-decoration: none;
+			color: #ffcc00;
+		}
+	}
+	}
+}

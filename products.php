@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,28 +29,30 @@
         <section class="hero">
             <section class="header">
                 <section class="title">
-                    <h1>descubre la moda.</h1>
-                    <h3>productos</h3>
+                    <h1>Descubre la moda.</h1>
+                    <h3>Productos</h3>
                 </section>
-                <p>sumergete en un mundo de innovación en moda en Klothink. Nuestras colecciones cuidadosamente seleccionadas reúnen las últimas tendencias y clásicos atemporales, asegurándote de encontrar las piezas perfectas para cada ocasión.</p>
+                <p>Sumérgete en un mundo de innovación en moda en Klothink. Nuestras colecciones cuidadosamente seleccionadas reúnen las últimas tendencias y clásicos atemporales, asegurándote de encontrar las piezas perfectas para cada ocasión.</p>
             </section>
             <section class="news">
                 <div class="new">
-                    <h2>novedades</h2>
+                    <h2>Novedades</h2>
                     <p>50+ nuevas diarias</p>
                 </div>
                 <div class="new">
-                    <h2>más de 1,500+</h2>
-                    <p>productos de moda seleccionados</p>
+                    <h2>Más de 1,500+</h2>
+                    <p>Productos de moda seleccionados</p>
                 </div>
             </section>
         </section>
-        <div class="filters gender">
-            <button id="all">todo</label>
-                <button id="men"><img src="./images/shirt.svg" alt="shirt" /> ropa de caballeros</label>
-                    <button id="women"><img src="./images/dress.svg" alt="dress" /> ropa de mujer</label>
-                        <button id="unisex"><img src="./images/baby-dress.svg" alt="baby-dress" /> ropa unisex</label>
-        </div>
+        <section class="filters-container">
+            <div class="filters gender">
+                <button id="all">Todo</button>
+                <button id="men"><img src="./images/shirt.svg" alt="Ropa de caballeros" /> Ropa de caballeros</button>
+                <button id="women"><img src="./images /dress.svg" alt="Ropa de mujer" /> Ropa de mujer</button>
+                <button id="unisex"><img src="./images/baby-dress.svg" alt="Ropa unisex" /> Ropa unisex</button>
+            </div>
+        </section>
         <section class="collections">
             <?php foreach ($collections as $collection): ?>
                 <div class="collection" id="<?= htmlspecialchars($collection['name']); ?>">
@@ -59,173 +62,49 @@
                             <p><?= htmlspecialchars($collection['description']); ?></p>
                         </div>
                     </div>
-                    <div class="clothes">
-                        <!-- <a>
-                            <article>
-                                <figure>
-                                    <summary>
-                                    <h1>Añadir producto</h1>
-                                </summary>
-                            </figure>
-                                <figcaption>
-                                <details>
-                                    <form method="post" action="./database/products.php">
-                                    <label for="name">Nombre del Producto:</label>
-                                    <input type="text" name="name" id="name" required>
-
-                                    <label for="description">Descripción:</label>
-                                    <textarea name="description" id="description" required></textarea><
-
-                                    <label for="price">Precio:</label>
-                                    <input type="number" name="price" id="price" required>
-
-                                    <label for="material">Material:</label>
-                                    <input type="text" name="material" id="material" required>
-
-                                    <label for="fit">Ajuste:</label>
-                                    <input type="text" name="fit" id="fit">
-
-                                    <label for="gender">Género:</label>
-                                    <input type="text" name="gender" id="gender">
-
-                                    <label for="brand">Marca:</label>
-                                    <select name="brand_id" id="brand_id">
-                                        <option value="">Selecciona una marca</option>
-                                    </select><br>
-
-                                    <label for="new_brand">Nueva Marca:</label>
-                                    <input type="text" name="new_brand" id="new_brand" placeholder="Escribe una nueva marca"><br>
-
-                                    <label for="category">Categoría:</label>
-                                    <select name="category_id" id="category_id">
-                                        <option value="">Selecciona una categoría</option>
-                                    </select>
-
-                                    <label for="new_category">Nueva Categoría:</label>
-                                    <input type="text" name="new_category" id="new_category" placeholder="Escribe una nueva categoría">
-
-                                    <button type="submit">Añadir Producto</button>
-                                </form>
-
-                                </details>
-                                </figcaption>
-                            </article>
-                        </a> -->
-                        <?php foreach ($products as $product):
-                            if ($product['collection_id'] === $collection['id']): ?>
-                                <a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
-                                    <?php $productsImagesUrls = explode(",", $product['images']); ?>
-                                    <article class="<?= htmlspecialchars($product['gender'] === 'men' ? 'men' : ($product['gender'] === 'women' ? 'women' : 'unisex')); ?> <?= htmlspecialchars($collection['name']); ?>">
-                                        <figure>
+                    <div class="clothes footer">
+                        <?php foreach ($products as $product): ?>
+                            <?php if ($product['collection_id'] === $collection['id']): ?>
+                                <article class="<?= htmlspecialchars($product['gender'] === 'men' ? 'men' : ($product['gender'] === 'women' ? 'women' : 'unisex')); ?> <?= htmlspecialchars($collection['name']); ?>">
+                                    <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
+                                        <div class="action-buttons">
+                                            <form method="post" action="./database/delete-product.php" class="delete-button" onsubmit="confirmDelete(event,<?= htmlspecialchars($product['id']); ?>, '<?= htmlspecialchars($product['name']); ?>')">
+                                                <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['id']); ?>">
+                                                <button type="submit" class="delete-button" title="Eliminar producto <?= htmlspecialchars($product['name']); ?>">
+                                                    <img src="./images/Minus.png" alt="Eliminar">
+                                                </button>
+                                            </form>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php $productsImagesUrls = explode(',', $product['images']); ?>
+                                    <figure>
+                                        <a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
                                             <img src="<?= htmlspecialchars($productsImagesUrls[0]); ?>" alt="<?= htmlspecialchars($product['name']); ?>">
-                                        </figure>
-                                        <figcaption>
-                                            <h2><?= htmlspecialchars($product['name']); ?></h2>
-                                            <div class="footer">
-                                                <h3><?= htmlspecialchars($product['fit']); ?></h3>
-                                                <span><?= htmlspecialchars($product['price']); ?></span>
-                                            </div>
-                                        </figcaption>
-                                    </article>
-                                </a>
+                                        </a>
+                                    </figure>
+                                    <figcaption>
+                                        <h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>"><?= htmlspecialchars($product['name']); ?></a></h2>
+                                        <div class="footer">
+                                            <h3><?= htmlspecialchars($product['fit']); ?></h3>
+                                            <span><?= htmlspecialchars($product['price']); ?></span>
+                                        </div>
+                                    </figcaption>
+                                </article>
                             <?php endif; ?>
                         <?php endforeach; ?>
+                        <div class="buttons">
+                            <button><img src="./images\arrow-right-white.svg" alt="arrow-right"></button>
+                            <button><img src="./images\arrow" alt="arrow-right"></button>
+                        </div>
                     </div>
+
                 </div>
             <?php endforeach; ?>
+
         </section>
     </main>
-    <footer>
-        <section class="main">
-            <section class="header">
-                <div class="header">
-                    <img src="./images/brand-page.svg" alt="Logo">
-                    <div class="social-media-icons">
-                        <a href="#"><img src="./images/github.svg" alt="Facebook"></a>
-                        <a href="#"><img src="./images/twitter.svg" alt="Twitter"></a>
-                        <a href="#"><img src="./images/linkedin.svg" alt="Instagram"></a>
-                    </div>
-                </div>
-                <div class="suscription">
-                    <input type="email" placeholder="Ingresa tu correo">
-                    <button>Suscribirse</button>
-                </div>
-            </section>
-            <section class="menu">
-                <div class="row">
-                    <a href="./index.php">
-                        <h2>Inicio</h2>
-                    </a>
-                    <a href="">
-                        <p>Características</p>
-                    </a>
-                    <a href="">
-                        <p>Productos populares</p>
-                    </a>
-                    <a href="">
-                        <p>Testimonios</p>
-                    </a>
-                    <a href="">
-                        <p>FAQ</p>
-                    </a>
-                </div>
-                <div class="row">
-                    <a href="">
-                        <h2>Hombre</h2>
-                    </a>
-                    <a href="#formal">
-                        <p>Formal</p>
-                    </a>
-                    <a href="#sport">
-                        <p>Sport</p>
-                    </a>
-                    <a href="#casual">
-                        <p>Casual</p>
-                    </a>
-                </div>
-                <div class="row">
-                    <a href="">
-                        <h2>Mujer</h2>
-                    </a>
-                    <a href="">
-                        <p>Formal</p>
-                    </a>
-                    <a href="">
-                        <p>Sport</p>
-                    </a>
-                    <a href="">
-                        <p>Casual</p>
-                    </a>
-                </div>
-                <div class="row">
-                    <a href="">
-                        <h2>Niños</h2>
-                    </a>
-                    <a href="">
-                        <p>Formal</p>
-                    </a>
-                    <a href="">
-                        <p>Sport</p>
-                    </a>
-                    <a href="">
-                        <p>Casual</p>
-                    </a>
-                </div>
-            </section>
-            <!-- <p class="responsive">
-                <p>Inicio</p>
-                <p>Productos</p>
-                <p>Contacto</p>
-            </p> -->
-        </section>
-        <section class="footer-policies">
-            <div class="policies-content">
-                <a href="#">Política de privacidad</a>
-                <a href="#">Términos y condiciones</a>
-            </div>
-        </section>
-    </footer>
-
+    <?php require_once './components/faq.php'; ?>
+    <?php require_once './components/footer.php'; ?>
 </body>
 
 </html>

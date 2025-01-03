@@ -1,0 +1,128 @@
+section.collections > div.collection {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin-top: 3em;
+
+    div.header {
+        display: flex;
+        gap: 4px;
+
+        div.title {
+            h2 {
+                text-transform: uppercase;
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+                color: var(--gray-medium);
+
+                &::first-letter {
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+
+    div.clothes {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        overflow: hidden;
+        position: relative;
+        margin: 20px;
+
+       article {
+        border:  1px solid #F1F1F3;
+        display: flex;
+        border-radius: 32px;
+        flex-direction: column;
+        width: fit-content;
+        margin: auto;
+        position: relative;
+        margin-bottom: 5em;
+
+            a {
+                text-decoration: none;
+                color: var(--black);
+                width: fit-content;
+
+                img {
+                    max-width: 305px;
+                    max-height: 305px;
+                    cursor: pointer;
+                    border-radius: 14px;
+                    background: #F7F7F8;
+                }
+            }
+
+            figcaption {
+                background: var(--white);
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: var(--padding-large) var(--padding-medium);
+
+                h2 {
+                    font-size: var(--font-size-medium);
+                    width: 100%;
+                    text-transform: capitalize;
+                }
+
+                .footer {
+                    display: flex;
+                    gap: 6em;
+
+                    h3 {
+                        color: var(--gray-medium);
+                        font-size: var(--font-size-medium);
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        div.buttons{
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            right: 0;
+
+        }
+    }
+
+	.footer {
+        &::-webkit-scrollbar {
+            height: 5px;
+            width: 1px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 31px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #e4e4e7;
+            border-radius: 31px;
+        }
+	}
+}
+
+@media screen and (min-width: 1024px) {
+main > section.collections > div.collection > div.clothes {
+		display: flex;
+		flex-wrap: wrap;
+		overflow: hidden;
+		flex-direction: row;
+		justify-content: center;
+		a{
+			margin: 0;
+			article{
+				width:	350px;
+			}
+		}
+		&:nth-child(2){
+			flex-wrap: nowrap;
+			overflow-x: scroll;
+		}
+	}
+}

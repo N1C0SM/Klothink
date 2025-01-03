@@ -8,23 +8,11 @@
 	<title>Klothink - Productos</title>
 	<link rel="stylesheet" href="./css/styles.css">
 	<?php include './database/db.php' ?>
-	<?php include './database/cart.php' ?>
+	<script defer src="./js/script.js"></script>
 </head>
 
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href="./index.php">Inicio</a></li>
-				<li><a href="./products.php">Productos</a></li>
-			</ul>
-			<img src="./images/brand-page.svg" alt="Klothink Logo">
-			<ul>
-				<li class="shopping-cart"><a href="./cart.php"><img src="./images/shopping-cart.svg" alt="Carrito"></a></li>
-				<li><a href="./contact.php">Contacto</a></li>
-			</ul>
-		</nav>
-	</header>
+	<?php require_once './components/header.php'; ?>
 	<main>
 		<section class="cart">
 			<section class="header">
@@ -84,7 +72,7 @@
 			</section>
 		</section>
 	</main>
-
+	<?php require_once './components/footer.php'; ?>
 </body>
 
 </html>

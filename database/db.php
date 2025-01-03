@@ -25,9 +25,3 @@ function connectDatabase()
 
     return $conn;
 }
-// $conn = connectDatabase();
-// $query = "SELECT * FROM products";
-// $products = $conn->query($query);
-
-// $query = "SELECT * FROM collections";
-// $collections = $conn->query($query);

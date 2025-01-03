@@ -1,0 +1,23 @@
+div.loader {
+    display: none;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 30px solid var(--yellow--primary);
+    border-left-color: #262626;
+    animation: loader 1s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 15em;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

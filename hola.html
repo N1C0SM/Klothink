@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		div.clothes {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    overflow: hidden;
+    position: relative;
+    margin: 20px;
+}
+
+ .footer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Permitir scroll horizontal */
+    scroll-behavior: smooth;
+    padding-bottom: 20px; /* Espacio para scrollbar */
+}
+
+/* Botones de navegación junto a la scrollbar */
+.buttons {
+    display: flex;
+    position: absolute;
+    bottom: 5px;  /* Justo encima de la scrollbar */
+    right: 10px;
+    gap: 10px;
+    z-index: 10;
+}
+
+div.clothes .buttons button {
+    background-color: #262626;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+div.clothes .buttons button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Personalización del scrollbar */
+.footer::-webkit-scrollbar {
+    height: 8px;
+}
+
+.footer::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 31px;
+}
+
+.footer::-webkit-scrollbar-track {
+    background: #e4e4e7;
+    border-radius: 31px;
+}
+
+	</style>
+</head>
+<body>
+	<div class="clothes footer">
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+		<article class="">
+			<figure>
+				<a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">
+					<img src="" alt="">
+	</a>
+	</figure>
+			<figcaption>
+				<h2><a href="./product-detail.php?id=<?= htmlspecialchars($product['id']); ?>">sudadera</a></h2>
+				<div class="footer">
+					<h3>regular</h3>
+					<span>34-00</span>
+				</div>
+			</figcaption>
+		</article>
+
+		<div class="buttons">
+			<button class="scroll-left"><img src="./images/arrow-left.svg" alt="Scroll Left"></button>
+			<button class="scroll-right"><img src="./images/arrow-right.svg" alt="Scroll Right"></button>
+		</div>
+	</div>
+</body>
+</html>

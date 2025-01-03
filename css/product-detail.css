@@ -1,0 +1,309 @@
+section.product-detail {
+  display: flex;
+
+  div.product {
+    width: 100vw;
+    gap: 5em;
+    position: relative; /* Necesario para la posición del div.images */
+
+    figure {
+      img {
+        width: 700px;
+        object-fit: fill;
+        position: absolute;
+        background: #ffc107;
+        border-radius: 20px;
+      }
+    }
+
+    div.images {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      gap: 1em;
+      padding: 1em;
+      height: fit-content;
+      border-radius: 1em;
+      position: relative;
+      background: white;
+
+      figure {
+        position: relative;
+        display: inline-block;
+        max-width: 3em;
+        img {
+          width: 100%;
+          transition: opacity 0.3s ease;
+        }
+
+        button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          font-size: 2rem;
+          color: #fff;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+          img {
+            opacity: 0.5;
+          }
+
+          button {
+            opacity: 1;
+          }
+        }
+      }
+
+      img {
+        object-fit: fill;
+        position: relative;
+        width: 3em;
+        border-radius: 0.5em;
+      }
+    }
+  }
+
+  div.details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+
+    div.header {
+      display: flex;
+      width: fit-content;
+
+      div.title {
+        display: flex;
+        flex-direction: column;
+        gap: 55px;
+
+        h2 {
+          display: flex;
+          width: 13em;
+          text-transform: capitalize;
+        }
+      }
+
+      h3.price {
+        font-size: 30px;
+      }
+
+      div.buttons {
+        display: flex;
+        gap: 5px;
+
+        button {
+          border-radius: 32px;
+          font-size: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: fit-content;
+          width: 10.5em;
+          border: none;
+          height: 3em;
+
+          &.buy {
+            background: #262626;
+            color: #f1f1f3;
+            display: flex;
+            gap: 10px;
+            padding: 16px 10px;
+          }
+
+          &.cart {
+            display: flex;
+            gap: 10px;
+            padding: 16px 10px;
+            border: 1px solid #f1f1f3;
+          }
+        }
+      }
+    }
+
+    div.blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      div.block {
+        border-radius: 2em;
+        border: 1px solid #f1f1f3;
+        padding: 30px;
+        display: flex;
+
+        div.header {
+          display: grid;
+          grid-template-columns: 2fr 2fr;
+          gap: 3em;
+
+          div.matherial {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+              form {
+                display: flex;
+                align-items: center;
+
+
+
+                  button {
+                       background: #ffc107;
+                      border: none;
+                      cursor: pointer;
+                      display: flex;
+                      align-items: center;
+                      padding: 5px 10px;
+                      border-radius: 4px;
+                      display: flex;
+                      align-items: center;
+                      height: 30px;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                  }
+              }
+
+            h3::first-letter {
+              text-transform: capitalize;
+            }
+          }
+
+          div.colour {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            div.inputs {
+              border: 1px solid #f1f1f3;
+              width: fit-content;
+              height: 44px;
+              display: flex;
+              gap: 4px;
+              flex-wrap: wrap;
+              padding: 10px;
+              border-radius: 100px;
+
+               input {
+                border-radius: 100%;
+                width: 24px;
+                appearance: none;
+              }
+            }
+          }
+
+          div.fit {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            h3::first-letter {
+              text-transform: capitalize;
+            }
+
+          form {
+                display: flex;
+                align-items: center;
+
+
+                  button {
+                       background: #ffc107;
+                      border: none;
+                      cursor: pointer;
+                      display: flex;
+                      align-items: center;
+                      padding: 5px 10px;
+                      border-radius: 4px;
+                      display: flex;
+                      align-items: center;
+                      height: 30px;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                  }
+              }
+          }
+
+          div.sizes {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            h3::first-letter {
+              text-transform: capitalize;
+            }
+
+            div.inputs {
+              display: flex;
+              gap: 10px;
+
+              section {
+                position: relative;
+                label {
+                  display: flex;
+                  text-transform: uppercase;
+                  justify-content: center;
+                  align-items: center;
+                  width: 48px;
+                  height: 48px;
+                  font-size: 18px;
+                  background-color: #f7f7f8;
+                  border-radius: 4px;
+                }
+
+                input {
+                  display: none;
+                  position: absolute;
+
+                  &:checked + label {
+                    background-color: #000;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      div.block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h3::first-letter {
+          text-transform: uppercase;
+        }
+
+        ul {
+          color: var(--gray-medium);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

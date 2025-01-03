@@ -1,0 +1,96 @@
+section.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    div.faqs {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 5em;
+        justify-content: space-between;
+
+        .faq-item {
+            border: 1px solid #F1F1F3;
+            border-radius: 14px;
+            overflow: hidden;
+            width: 100%;  /* Asegura que el acordeón ocupe todo el espacio disponible */
+
+            details {
+                background-color: #FCFCFD;
+                padding: 1em;
+                cursor: pointer;
+                border-bottom: 1px solid #F1F1F3;
+                transition: max-height 0.5s ease, background-color 0.3s ease;
+                height: auto; /* Permite que se expanda verticalmente */
+                overflow: hidden; /* Evita que se expanda hacia los lados */
+                display: block; /* Hace que el contenido se despliegue como bloque */
+
+                &[open] {
+                    background-color: #fff;
+                    height: auto; /* Se expande hacia abajo */
+                }
+
+                summary {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+
+                    &::after {
+                        content: url('../images/open-icon.svg');
+                        transition: transform 0.3s ease;
+                    }
+                }
+
+                &[open] summary::after {
+                    content: url('../images/close-icon.svg');
+                    transform: rotate(180deg);
+                }
+
+                p {
+                    padding: 1em;
+                    margin: 0;
+                    color: #555;
+                    line-height: 1.5;
+                }
+
+                /* Detalles dentro de detalles */
+                details {
+                    margin-left: 1em; /* Asegura que haya un espacio lateral en los elementos anidados */
+                    border: 1px solid #E1E1E3;
+                    border-radius: 10px;
+                    height: 0;
+                    overflow: hidden;
+                    display: block;
+                    transition: height 0.5s ease;
+
+                    &[open] {
+                        height: auto; /* Se expande hacia abajo */
+                    }
+
+                    summary {
+                        font-size: 1rem;
+                        padding: 0.5em 0;
+
+                        &::after {
+                            content: url('../images/open-icon.svg');
+                            transition: transform 0.3s ease;
+                        }
+                    }
+
+                    &[open] summary::after {
+                        content: url('../images/close-icon.svg');
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}
